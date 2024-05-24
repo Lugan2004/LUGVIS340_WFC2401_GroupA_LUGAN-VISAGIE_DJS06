@@ -1,15 +1,49 @@
-<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="scripts.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+        text-align: center;
+        background-color: #1e1f1f;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        padding: auto;
+        
+    }
+    h1 {
+      font-size: 50px;
+      padding: 20px;
+      transition: background-image 1s ease;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      padding-top: 20%;
+      padding-bottom: 20%;
+    }
+  </style>
 </head>
-
 <body>
+  <h1>Check the console</h1>
+  <script>
+    const h1 = document.querySelector('h1');
+    const gradients = [
+      'linear-gradient(to right, #ff6e7f, #bfe9ff)',
+      'linear-gradient(to right, #f3a183, #e9d460)',
+      'linear-gradient(to right, #a1c4fd, #c2e9fb)',
+      'linear-gradient(to right, #d9afd9, #97d9e1)',
+      'linear-gradient(to right, #ffafbd, #ffc3a0)'
+    ];
 
+    let currentGradientIndex = 0;
+
+    function changeGradient() {
+      h1.style.backgroundImage = gradients[currentGradientIndex];
+      currentGradientIndex = (currentGradientIndex + 1) % gradients.length;
+    }
+
+    setInterval(changeGradient, 2000);
+  </script>
+  <script src="scripts.js"></script>
 </body>
-
 </html>
