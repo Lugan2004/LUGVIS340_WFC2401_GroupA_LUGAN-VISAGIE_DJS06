@@ -39,11 +39,12 @@
   'linear-gradient(270deg, #0097CF, #5CC5E4, #BFE8F7)',
   'linear-gradient(270deg, #FC354C, #0ABFBC)'
 ];
-    let currentGradientIndex = 0;
+   
+    let randomGradientIndex = Math.floor(Math.random() * gradients.length);
 
     function changeGradient() {
-      h1.style.backgroundImage = gradients[currentGradientIndex];
-      currentGradientIndex = (currentGradientIndex + 1) % gradients.length;
+      h1.style.backgroundImage = gradients[randomGradientIndex];
+      randomGradientIndex = (randomGradientIndex + 1) % gradients.length;
     }
 
     setInterval(changeGradient, 2000);
